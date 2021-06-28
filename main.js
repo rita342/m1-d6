@@ -197,11 +197,25 @@ function isTodayMyBirthday() {
     /* Ex.12 
         Write a function called "olderMovie" which finds the oldest movie in the array provided at the end of this file.
     */
+    const pickOldest = arr => {
+        const res = {
+            Title: '',
+            Year: +Infinity
+        };
+        arr.forEach(el => {
+            const { Title, Year } = el;
+            if (Year < res.Year) {
+                res.Title = Title;
+                res.Year = Year;
+            };
+        });
+        return res;
+    }; console.log(pickOldest(movies));
 
     /* Ex.13
         Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
     */
-
+    var count = movies.length; console.log(count)
     /* Ex.14
         Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
     */
@@ -258,9 +272,9 @@ function isTodayMyBirthday() {
       ***
     */
     function tree() {
-        a = "*"
-        b = "** "
-        c = "***"
+        let a = "*"
+        let b = "**"
+        let c = "***"
     }
     console.log(tree(a)) console.log(tree(b)) console.log(tree(c))
 
@@ -273,9 +287,9 @@ function isTodayMyBirthday() {
       *****
     */
     function tree() {
-        a = "  *  "
-        b = " *** "
-        c = "*****"
+        let a = "*"
+        let b = "***"
+        let c = "*****"
     }
     console.log(tree(a)) console.log(tree(b)) console.log(tree(c))
     /* Ex.23
